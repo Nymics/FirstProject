@@ -1,5 +1,6 @@
 package com.example.jbnel.firstproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.net.Uri;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    private View view;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,4 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void GoToGoogle(View view)
+    {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+        view.getContext().startActivity(intent);
+    }
+
+
 }
